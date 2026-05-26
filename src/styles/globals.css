@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #050505;
+    color: #f3f4f6;
+    overflow-x: hidden;
+  }
+
+  /* Custom selection color matching the premium emerald tone */
+  ::selection {
+    background-color: rgba(0, 217, 165, 0.18);
+    color: #00d9a5;
+  }
+
+  /* Thin premium scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    transition: background 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00d9a5;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 12px rgba(0, 217, 165, 0.35);
+  }
+
+  .text-glow-strong {
+    text-shadow: 0 0 20px rgba(0, 217, 165, 0.55), 0 0 40px rgba(0, 217, 165, 0.18);
+  }
+
+  .glass-card {
+    background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-glow:hover {
+    border-color: rgba(0, 217, 165, 0.2);
+    box-shadow: 0 20px 40px -15px rgba(0, 217, 165, 0.08),
+      0 0 30px -5px rgba(0, 217, 165, 0.08);
+    transform: translateY(-4px);
+  }
+
+  /* Subtle cinematic background atmosphere */
+  .grid-overlay {
+    background-size: 64px 64px;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+  }
+
+  .atmosphere-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .pointer-glow {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 217, 165, 0.28) 0%, rgba(0, 217, 165, 0.06) 30%, transparent 78%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: opacity 0.25s ease-out;
+  }
+}
