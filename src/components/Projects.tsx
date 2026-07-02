@@ -7,13 +7,14 @@ import {
   Brain,
   Sparkles,
   Activity,
+  Users,
 } from "lucide-react";
 import { GithubIcon } from "@/lib/icons";
 import Section from "./Section";
 import { projectsData } from "@/data/portfolio";
 
 interface MockupProps {
-  type: "email" | "dashboard" | "scanner" | "editor";
+  type: "email" | "dashboard" | "scanner" | "editor" | "studyroom";
 }
 
 function ProjectMockup({ type }: MockupProps) {
@@ -207,6 +208,100 @@ function ProjectMockup({ type }: MockupProps) {
                 <span className="px-2 py-1 rounded-full border border-neutral-800 bg-neutral-950 text-accent">
                   F10
                 </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === "studyroom") {
+    return (
+      <div className="w-full h-full bg-[#080808] border border-neutral-900 rounded-t-xl p-4 flex flex-col justify-between overflow-hidden relative group-hover:border-accent/10 transition-colors">
+        <div className="flex items-center justify-between pb-3 border-b border-neutral-900">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+            <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+          </div>
+          <span className="text-[10px] text-neutral-500 font-mono">
+            studyroom.app/session
+          </span>
+          <span className="w-4 h-4 rounded-md bg-accent-muted/10 border border-accent/20 flex items-center justify-center">
+            <Users size={8} className="text-accent" />
+          </span>
+        </div>
+
+        <div className="flex gap-3 pt-3 flex-1">
+          <div className="w-1/2 flex flex-col gap-2 border-r border-neutral-900 pr-2">
+            <span className="text-[7px] text-accent uppercase tracking-widest font-semibold">
+              Live Participants
+            </span>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between gap-2 bg-neutral-900/30 border border-neutral-950 rounded-lg p-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <div>
+                    <p className="text-[8px] font-semibold text-white">Aanya</p>
+                    <p className="text-[7px] text-neutral-400">online</p>
+                  </div>
+                </div>
+                <span className="text-[7px] text-neutral-400">4m ago</span>
+              </div>
+              <div className="flex items-center justify-between gap-2 bg-neutral-900/30 border border-neutral-950 rounded-lg p-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                  <div>
+                    <p className="text-[8px] font-semibold text-white">Devin</p>
+                    <p className="text-[7px] text-neutral-400">online</p>
+                  </div>
+                </div>
+                <span className="text-[7px] text-neutral-400">2m ago</span>
+              </div>
+              <div className="flex items-center justify-between gap-2 bg-neutral-900/20 border border-neutral-950 rounded-lg p-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                  <div>
+                    <p className="text-[8px] font-semibold text-white">Mira</p>
+                    <p className="text-[7px] text-neutral-400">online</p>
+                  </div>
+                </div>
+                <span className="text-[7px] text-neutral-400">now</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-1 flex flex-col gap-2">
+            <div className="bg-neutral-900/25 border border-neutral-950 rounded-3xl p-3 flex items-center gap-3">
+              <div className="relative w-14 h-14 rounded-full border-[3px] border-neutral-800 flex items-center justify-center">
+                <div className="absolute inset-0 rounded-full border-[3px] border-accent border-r-transparent border-b-transparent animate-spin-slow" />
+                <span className="text-[10px] font-bold text-white">24:12</span>
+              </div>
+              <div className="flex-1 space-y-1">
+                <span className="text-[8px] text-accent uppercase tracking-widest font-semibold">
+                  Pomodoro Session
+                </span>
+                <p className="text-[8px] text-neutral-400 leading-snug">
+                  Focus mode active with live streak tracking and rhythm cues.
+                </p>
+              </div>
+            </div>
+            <div className="flex-1 bg-neutral-900/30 border border-neutral-950 rounded-3xl p-3 flex flex-col gap-2 text-[8px] text-neutral-300">
+              <span className="uppercase tracking-widest text-[7px] text-neutral-400">
+                Live study chat
+              </span>
+              <div className="space-y-2">
+                <div className="bg-neutral-950/60 rounded-2xl p-2">
+                  <p className="text-[8px] text-accent font-medium">Nina:</p>
+                  <p className="text-[8px] text-neutral-300">Ready to review the next chapter in 3 minutes.</p>
+                </div>
+                <div className="bg-neutral-950/60 rounded-2xl p-2">
+                  <p className="text-[8px] text-accent font-medium">Leo:</p>
+                  <p className="text-[8px] text-neutral-300">
+                    Got it — switching to practice problems after this round.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

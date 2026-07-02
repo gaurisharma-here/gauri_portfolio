@@ -18,7 +18,7 @@ export interface ProjectItem {
   tech: string[];
   githubUrl: string;
   liveUrl?: string;
-  graphicType: "email" | "dashboard" | "scanner" | "editor";
+  graphicType: "email" | "dashboard" | "scanner" | "editor" | "studyroom";
 }
 
 export interface SocialLink {
@@ -180,6 +180,29 @@ export const projectsData: ProjectItem[] = [
     githubUrl: "https://github.com/gaurisharma-here/neuroscan-ai",
     liveUrl: "https://github.com/gaurisharma-here/neuroscan-ai",
     graphicType: "scanner",
+  },
+  {
+    title: "StudyRoom",
+    subtitle: "Collaborative Study Room Platform",
+    description:
+      "Built a real-time collaborative study platform that helps students stay focused and accountable while studying together online, with live rooms, chat, and session tracking.",
+    highlights: [
+      "Realtime room chat and live participant updates using FastAPI WebSockets",
+      "JWT-based authentication with protected routes and invite-code room joins",
+      "Pomodoro-style session timer with study streak and total hours dashboard",
+      "Deployed frontend on Vercel and backend on Render, with Supabase PostgreSQL",
+    ],
+    tech: [
+      "React",
+      "Vite",
+      "FastAPI",
+      "WebSockets",
+      "Supabase",
+      "Zustand",
+    ],
+    githubUrl: "https://github.com/gaurisharma-here/study-platform",
+    liveUrl: "https://study-platform-hazel.vercel.app",
+    graphicType: "studyroom",
   },
 ];
 
